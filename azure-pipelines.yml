@@ -279,12 +279,11 @@ stages:
     steps:
     - template: steps/deploy-github.yml
 
-  - job: nuget_deploy
-    dependsOn: github_deploy
-    pool:
-      vmImage: 'VS2017-Win2016'
-    steps:
-    # - template: steps/deploy-nuget.yml
+  # - job: nuget_deploy
+  #   dependsOn: github_deploy
+  #   pool:
+  #     vmImage: 'VS2017-Win2016'
+  # steps: # - template: steps/deploy-nuget.yml
 
   - job: docker_deploy
     dependsOn: github_deploy
